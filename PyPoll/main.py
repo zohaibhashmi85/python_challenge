@@ -14,11 +14,19 @@ correy_percentage = 0
 li_percetnage = 0
 otooley_percentage = 0
 winner =[]
+CandidateList=[]
 
 with open(input_file) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     header = next(csvreader)
     for row in csvreader:
+
+         # To find the list of candidate
+        
+        if row[2] not in CandidateList:
+            CandidateList.append(row[2])
+			
+#print(CandidateList)
         total_votes += 1
         if row[2] == 'Khan':
             list_candidate_khan += 1
